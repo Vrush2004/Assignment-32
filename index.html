@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 32</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Dice Roller</h1>
+            <img src="./images/dice.png" alt="" class="dice-img" id="img-dice">
+            <button class="btn" onclick="changeImage()">Roll Dice</button>
+        </div>
+    </div>
+    <script>
+
+        function reset(){
+            const imgElement = document.getElementById("img-dice");
+            imgElement.src = "./images/dice.png";
+        }
+        
+        function changeImage(){
+            const min = 1;
+            const max = 6;
+            const randomNum = Math.round(Math.random() * (max-min)) + min
+
+            const imgElement = document.getElementById("img-dice");
+            if(randomNum == 1){
+            imgElement.src = "./images/dice1.png";
+            }else if(randomNum == 2){
+                imgElement.src = "./images/dice2.png";
+            }else if(randomNum == 3){
+                imgElement.src = "./images/dice3.png";
+            }else if(randomNum == 4){
+                imgElement.src = "./images/dice4.png";
+            }else if(randomNum == 5){
+                imgElement.src = "./images/dice5.png";
+            }else{
+                imgElement.src = "./images/dice6.png";
+            }
+        }
+        setTimeout(reset, 3000)
+    </script>
+</body>
+</html>
